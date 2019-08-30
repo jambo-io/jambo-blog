@@ -1,33 +1,120 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14pt;
+    font-kerning: normal;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+    font-size: 27pt;
+    line-height:  1.4;
+    text-align: center;
+    margin-bottom: 1.7em;
+    color: #19828e;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+blockquote {
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
 }
 
-.App-link {
-  color: #61dafb;
+b {
+    color: #19828e;
+    font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+blockquote:before{content: open-quote;}
+blockquote:after{content: close-quote;}
+
+.wall-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    background-color:red;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+
+.text-wrapper {
+    position: relative;
+    
+}
+
+article {
+    line-height: 1.6;
+    font-kerning: auto;
+    text-indent: 1.4em;
+    
+}
+article::first-letter { 
+    font-family: "Gentium Book Basic", serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    line-height: 1em;
+    color:#19828e;
+}
+
+article img {
+    max-width: 300px;
+    float: left;
+    margin: 20px;
+}
+
+  .circles-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .circles-container div::before {
+      
+    content: ' \25CF';
+    color:#19828e;
+    font-size: 1em;
+    display: flex;
+    margin-top: 3.5em;
+    margin-left: 25px;
   }
-}
+  /* On screens that are 992px or less, set the background color to blue */
+  @media screen and (max-width: 2048px) {
+    .text-wrapper {
+        padding: 7em;
+        margin-bottom: 4em;
+    }
+  }
+
+/* On screens that are 768px or less, set the background color to blue */
+@media screen and (max-width: 769px) {
+    .text-wrapper {
+        padding: 2em;
+        margin-bottom: 4em;
+    }
+  }
+
+
+/* On screens that are 768px or less, set the background color to blue */
+@media screen and (max-width: 411px) {
+    .text-wrapper {
+        padding: 1em;
+        margin-bottom: 4em;
+    }
+  }
+
+
+
+
+
+
+
