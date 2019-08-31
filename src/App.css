@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
 
-body {
+html,body {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 300;
     font-size: 14pt;
     font-kerning: normal;
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0 auto;
 }
 
-h1 {
+h1.title {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
     font-size: 27pt;
@@ -19,8 +21,10 @@ h1 {
     margin-bottom: 1.7em;
     color: #19828e;
 }
-
-
+h1.title::first-letter {
+    font-size: 200%;
+    font-family: 'Dancing Script', cursive;
+}
 
 blockquote {
     font-family: 'Nunito Sans', sans-serif;
@@ -36,7 +40,6 @@ blockquote:before{content: open-quote;}
 blockquote:after{content: close-quote;}
 
 .wall-image {
-    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -70,6 +73,7 @@ article img {
     max-width: 300px;
     float: left;
     margin: 20px;
+    border-radius: 0.3em;
 }
 
   .circles-container {
@@ -86,6 +90,18 @@ article img {
     margin-top: 3.5em;
     margin-left: 25px;
   }
+
+   /* On screens that are 992px or less, set the background color to blue */
+   @media screen and (max-width: 5048px) {
+    .text-wrapper {
+        padding: 5em;
+        padding-left: 32em;
+        padding-right: 32em;
+        margin-bottom: 4em;
+    }
+  }
+
+
   /* On screens that are 992px or less, set the background color to blue */
   @media screen and (max-width: 2048px) {
     .text-wrapper {
@@ -100,6 +116,17 @@ article img {
         padding: 2em;
         margin-bottom: 4em;
     }
+    article img {
+        float: none;
+        margin: 0 auto;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
   }
 
 
@@ -108,6 +135,13 @@ article img {
     .text-wrapper {
         padding: 1em;
         margin-bottom: 4em;
+    }
+    article img {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
     }
   }
 

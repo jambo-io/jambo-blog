@@ -29,7 +29,7 @@ export default function Index() {
             </div>
 
             <div className="text-wrapper">
-                <h1>Quais são as Origens da Fé Bahá'í?</h1>
+                <h1 className="title">Por que o mundo está assim?</h1>
                 <article>
                     {parse(article.text)}
                 </article>
