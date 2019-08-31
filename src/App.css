@@ -79,7 +79,6 @@ article img {
   }
 
   .circles-container div::before {
-      
     content: ' \25CF';
     color:#19828e;
     font-size: 1em;
