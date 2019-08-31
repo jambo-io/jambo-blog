@@ -27,8 +27,16 @@ h1.title::first-letter {
 }
 
 blockquote {
+    text-indent: -0.4em;
     font-family: 'Nunito Sans', sans-serif;
     font-style: italic;
+    position: relative;
+    font-family: 'Roboto', serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    font-weight: 100;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
 }
 
 b {
@@ -36,8 +44,14 @@ b {
     font-weight: 600;
 }
 
-blockquote:before{content: open-quote;}
-blockquote:after{content: close-quote;}
+blockquote:before, blockquote:after {
+    content: '\201C';
+    font-family: 'Sanchez';
+    color: lighten($black, 40%);
+ }
+ blockquote:after {
+    content: '\201D';
+ }
 
 .wall-image {
     top: 0;
