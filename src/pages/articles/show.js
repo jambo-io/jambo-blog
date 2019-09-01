@@ -10,7 +10,7 @@ const long_text = `<p>O interesse em como o <b>potencial humano é libertado é 
 <p>Lorem ipsum dolor sit amet, te euripidis concludaturque mea, laoreet deleniti et vis, an nobis nostro eos. Ad nibh omittam quo, quo alienum eloquentiam ut. Cu eius libris definitiones mei. Ei vix accusam periculis. Dicam alterum disputationi an sed, summo movet dolores cu nec. An nominati efficiendi cum, ius ut suscipit incorrupte signiferumque.</p>
 <p>Lorem ipsum dolor sit amet, te euripidis concludaturque mea, laoreet deleniti et vis, an nobis nostro eos. Ad nibh omittam quo, quo alienum eloquentiam ut. Cu eius libris definitiones mei. Ei vix accusam periculis. Dicam alterum disputationi an sed, summo movet dolores cu nec. An nominati efficiendi cum, ius ut suscipit incorrupte signiferumque.</p>`;
 
-export default function Index() {
+export default function Show() {
     const [article, setArticle] = useState(
         {
             text: long_text,

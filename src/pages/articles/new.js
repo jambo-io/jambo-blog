@@ -1,21 +1,36 @@
 import React, { useRef } from 'react';
+import axios from 'axios';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import useArticleForm from './CustomHooks';
+import { withRouter, Redirect } from "react-router-dom";
 
-export default function New() {
-
+function New(props) {
 
     const submit = () => {
-        console.log(inputEl.current.props.data);
+        const title = inputs.title;
+        const article = inputEl.current.props.data;
+
+        axios.post(`http://localhost:3000/api/v1/articles`, {
+            article: {
+                title: title,
+                article, article,
+            }
+        }).then(res => {
+            console.log("Responded");
+            console.log(props);
+            props.history.push('/show');
+        })
     }
+
     const inputEl = useRef(null);
     const { inputs, handleInputChange, handleSubmit } = useArticleForm(submit);
 
 
+
     return (
         <>
-            <h1>Using CKEditor 5 build in React</h1>
+            <h1>Novo Artigo</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Título</label>
@@ -46,3 +61,5 @@ export default function New() {
         </>
     );
 }
+
+export default withRouter(New);
