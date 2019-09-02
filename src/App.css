@@ -43,7 +43,7 @@ blockquote {
     margin-bottom: 2.5em;
 }
 
-b {
+b, strong {
     color: #19828e;
     font-weight: 600;
 }

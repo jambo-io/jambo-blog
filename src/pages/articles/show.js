@@ -16,6 +16,7 @@ export default function Show(props) {
         {
             title: "Nenhum Título",
             text: long_text,
+            wall: "",
         }
     );
 
@@ -26,7 +27,7 @@ export default function Show(props) {
             .then(res => {
                 console.log("response");
                 console.log(res);
-                setArticle({ title: res.data.title, text: res.data.article })
+                setArticle({ title: res.data.title, text: res.data.article, wall: res.data.wall })
             });
 
     }, []);
@@ -34,7 +35,7 @@ export default function Show(props) {
     return (
         <>
 
-            <div className="wall-image" style={{ backgroundImage: `url(${Image1})` }}>
+            <div className="wall-image" style={{ backgroundImage: `url(http://localhost:3000${article.wall})` }}>
 
             </div>
 
