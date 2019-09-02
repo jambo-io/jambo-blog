@@ -8,7 +8,7 @@ export default function App() {
   return (<>
     <header />
     <Router>
-      <Route path="/show" exact component={Show} />
+      <Route path="/show/:id" exact component={Show} />
       <Route path="/new" exact component={New} />
     </Router>
     <footer />

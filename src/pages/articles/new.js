@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -7,19 +7,25 @@ import { withRouter, Redirect } from "react-router-dom";
 
 function New(props) {
 
+    const [article, setArticle] = useState(
+        {}
+    );
+
     const submit = () => {
         const title = inputs.title;
-        const article = inputEl.current.props.data;
+        const text = article.article;
+        console.log("debugin");
+        console.log(text);
 
         axios.post(`http://localhost:3000/api/v1/articles`, {
             article: {
                 title: title,
-                article, article,
+                article: text,
             }
         }).then(res => {
             console.log("Responded");
-            console.log(props);
-            props.history.push('/show');
+            const id = res.data.id;
+            //props.history.push(`/show/${id}`);
         })
     }
 
@@ -47,7 +53,7 @@ function New(props) {
                     }}
                     onChange={(event, editor) => {
                         const data = editor.getData();
-                        console.log({ event, editor, data });
+                        setArticle({ article: data });
                     }}
                     onBlur={(event, editor) => {
                         console.log('Blur.', editor);
