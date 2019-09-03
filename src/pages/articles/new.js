@@ -1,15 +1,21 @@
 import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 import useArticleForm from './CustomHooks';
 import { withRouter, Redirect } from "react-router-dom";
+
+import CKEditor from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 function New(props) {
 
     const [article, setArticle] = useState(
         {}
     );
+
+
+
 
     const submit = () => {
         const title = inputs.title;
@@ -22,6 +28,7 @@ function New(props) {
         const formData = new FormData()
 
         formData.append('article[wall]', wall, 'image.jpg');
+
         formData.append('article[title]', title);
         formData.append('article[article]', text);
 
@@ -59,6 +66,19 @@ function New(props) {
     const inputEl = useRef(null);
     const { inputs, handleInputChange, handleSubmit } = useArticleForm(submit);
 
+    const editorConfiguration = {
+
+        plugins: ['Essentials', 'Paragraph', 'Bold', 'Italic', 'Image', 'CKFinder', 'BlockQuote', 'ImageUpload'],
+        toolbar: ['bold', 'italic', '|', 'undo', 'redo', 'imageUpload', 'blockquote'],
+        ckfinder: {
+            options: {
+
+            },
+            // The URL that the images are uploaded to.
+            uploadUrl: 'http://localhost:3000/api/v1/ckeditor'
+        }
+    };
+
 
 
     return (
@@ -75,9 +95,11 @@ function New(props) {
                     ref={inputEl}
                     editor={ClassicEditor}
                     data=""
+                    config={editorConfiguration}
                     onInit={editor => {
                         // You can store the "editor" and use when it is needed.
                         console.log('Editor is ready to use!', editor);
+                        console.log(ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName));
                     }}
                     onChange={(event, editor) => {
                         const data = editor.getData();
