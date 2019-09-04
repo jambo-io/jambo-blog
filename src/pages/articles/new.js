@@ -68,8 +68,14 @@ function New(props) {
 
     const editorConfiguration = {
 
-        plugins: ['Essentials', 'Paragraph', 'Bold', 'Italic', 'Image', 'CKFinder', 'BlockQuote', 'ImageUpload'],
-        toolbar: ['bold', 'italic', '|', 'undo', 'redo', 'imageUpload', 'blockquote'],
+        plugins: ['Essentials', 'Alignment', 'Paragraph', 'Bold', 'Italic', 'Image', 'CKFinder', 'BlockQuote', 'ImageUpload'],
+        alignment: {
+            options: ['left', 'center', 'right']
+        },
+        toolbar: ['bold', 'italic', '|', 'undo', 'redo', 'imageUpload', 'blockquote', 'alignment'
+
+        ],
+
         ckfinder: {
             options: {
 
@@ -100,6 +106,7 @@ function New(props) {
                         // You can store the "editor" and use when it is needed.
                         console.log('Editor is ready to use!', editor);
                         console.log(ClassicEditor.builtinPlugins.map(plugin => plugin.pluginName));
+                        console.log(Array.from(editor.ui.componentFactory.names()));
                     }}
                     onChange={(event, editor) => {
                         const data = editor.getData();
