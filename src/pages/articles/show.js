@@ -23,7 +23,7 @@ export default function Show(props) {
     useEffect(() => {
         const id = props.match.params.id;
 
-        axios.get(`http://localhost:3000/api/v1/articles/${id}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_HOST}/api/v1/articles/${id}`)
             .then(res => {
                 console.log("response");
                 console.log(res);
@@ -35,7 +35,7 @@ export default function Show(props) {
     return (
         <>
 
-            <div className="wall-image" style={{ backgroundImage: `url(http://localhost:3000${article.wall})` }}>
+            <div className="wall-image" style={{ backgroundImage: `url(${process.env.REACT_APP_BACKEND_HOST}${article.wall})` }}>
 
             </div>
 

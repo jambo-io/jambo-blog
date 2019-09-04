@@ -44,7 +44,7 @@ function New(props) {
 
 
         axios({
-            url: `http://localhost:3000/api/v1/articles`,
+            url: `${process.env.REACT_APP_BACKEND_HOST}/api/v1/articles`,
             method: "POST",
             data: formData,
             config: { headers: { 'Content-Type': 'multipart/form-data' } }
@@ -81,7 +81,7 @@ function New(props) {
 
             },
             // The URL that the images are uploaded to.
-            uploadUrl: 'http://localhost:3000/api/v1/ckeditor'
+            uploadUrl: `${process.env.REACT_APP_BACKEND_HOST}/api/v1/ckeditor`
         }
     };
 
