@@ -61,7 +61,7 @@ export default function Index(props) {
                                 <div className="index-card">
                                     <div className="index-card-img" style={{ backgroundImage: `url(${process.env.REACT_APP_BACKEND_HOST}/${article.wall_thumb_url})` }}>
                                         <div className="index-card-title">
-                                            <Link to={`/show/${article.id}`}>{article.id}</Link>
+                                            <Link to={`/show/${article.id}`}>{article.title}</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@ export default function Index(props) {
 
             {page.has_more && (
                 <div className="wrap-button">
-                    <button className="bt_seemore" onClick={handleLoadMore}>Ver Mais</button> {page.current_page} {page.has_more.toString()}
+                    <button className="bt_seemore" onClick={handleLoadMore}>Ver Mais</button>
                 </div>
             )}
 
