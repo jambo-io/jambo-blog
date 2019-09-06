@@ -27,7 +27,7 @@ export default function Show(props) {
             .then(res => {
                 console.log("response");
                 console.log(res);
-                setArticle({ title: res.data.title, text: res.data.article, wall: res.data.wall })
+                setArticle({ title: res.data.title, text: res.data.article, wall: res.data.wall_url })
             });
 
     }, []);

@@ -172,6 +172,42 @@ article img {
     margin: 0 auto;
   }
 
+  @media screen and (max-width: 1024PX) {
+    .index-card-deck {
+        width: 72%;
+      }
+  }
+
+  @media screen and (max-width: 769px) {
+    .index-card-deck {
+        width: 93%;
+      }
+  }
+
+  @media screen and (max-width: 414px) {
+    .index-card-deck {
+        width: 85%;
+      }
+  }
+
+  @media screen and (max-width: 411px) {
+    .index-card-deck {
+        width: 85%;
+      }
+  }
+
+  @media screen and (max-width: 375px) {
+    .index-card-deck {
+        width: 94%;
+      }
+  }
+
+  @media screen and (max-width: 360PX) {
+    .index-card-deck {
+        width: 98%;
+      }
+  }
+
   .index-card {
       display: block;
       width: 350px;
@@ -190,20 +226,35 @@ article img {
       background-repeat: no-repeat;
   }
 
-  .index-card-title {
+  .index-card-title, .index-card-title a {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
       bottom: 10px;
       width: 90%;
       text-align: center;
-
+      text-decoration: none;
       font-weight: 600;
       color: white;
       text-shadow: 2px 1px 4px #000000;
-
   }
 
+  .bt_seemore {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .wrap-button{
+      display: flex; justify-content: center;
+      padding: 2em;
+  }
 
 
 
