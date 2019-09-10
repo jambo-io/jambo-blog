@@ -6,6 +6,9 @@ import Image1 from '../../images/image1.jpg';
 
 export default function Index(props) {
 
+    const [loading, setLoading] = useState({
+        isLoading: true,
+    });
     const [page, setPage] = useState({
         current_page: 1,
         limit: 10,
@@ -26,6 +29,7 @@ export default function Index(props) {
                     const total_pages = res.data.total_pages;
                     if (once.once === true) {
                         setArticles([...articles, more_articles]);
+                        setLoading({ isLoading: false });
                     }
                     if (res.data.has_more === false) {
                         setPage({ ...page, has_more: false });
@@ -51,10 +55,12 @@ export default function Index(props) {
 
     return (
         <>
-
             <div className="index-card-deck">
+                {loading.isLoading && (
+                    <div className="Loading" />
+                )}
 
-                {articles && articles.map((article, i) =>
+                {loading.isLoading === false && articles && articles.map((article, i) =>
                     article && article.map((article, i) =>
                         <>
                             <Link to={`/show/${article.id}`}>
